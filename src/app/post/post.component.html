@@ -1,0 +1,27 @@
+<li
+  [ngClass]="{
+    'list-group-item': true,
+    'list-group-item-success': postLike === 'oui',
+    'list-group-item-danger': postUnlike === 'oui'
+  }"
+  class="mb-4"
+  [ngStyle]="{ background: getColor() }"
+>
+  <h4>{{ postTitle }}</h4>
+  <p>{{ postDate | date: "short" }}</p>
+  <p>{{ postContent }}</p>
+  <button class="btn btn-success mr-2" (click)="onCountLike()">
+    Like?
+  </button>
+  <button class="btn btn-danger" (click)="onCountUnlike()">
+    Unlike?
+  </button>
+</li>
+
+<!-- [ngStyle]="{ background: getColor() }"
+ -->
+
+<!-- [class.green]="counter > 0"
+[class.red]="counter < 0" -->
+
+<!-- class="mb-4 {{ counter > 0 ? 'green' : 'red' }}" -->
